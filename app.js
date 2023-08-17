@@ -47,9 +47,12 @@ scoreBtn[5].addEventListener("click", function(){
 
 //New game button
 scoreBtn[6].addEventListener("click", function(){
+    scoreScreen[0].style.outline = "";
+    scoreScreen[1].style.outline = "";
+
     homeCounter = 0;
     homeScore.innerHTML = homeCounter;
-    
+
     guestCounter = 0;
     guestScore.innerHTML = guestCounter;
     
@@ -59,12 +62,12 @@ function highLightLeader() {
     if (homeCounter > guestCounter) {
         scoreScreen[0].style.outline = "0.1px solid gold";
         scoreScreen[1].style.outline = "";
-    } else if (guestCounter > homeCounter) {
+    } else if (homeCounter < guestCounter) {
+        scoreScreen[0].style.outline = "";
         scoreScreen[1].style.outline = "0.1px solid gold";
-        scoreScreen[0].style.outline = "nne";
     } else if (homeCounter == guestCounter) {
         scoreScreen[0].style.outline = "";
-        scoreScreen[1].style.outline = ""
+        scoreScreen[1].style.outline = "";
     }
 }
 
